@@ -7,9 +7,13 @@ import com.demo.taotao.pojo.User;
 import com.demo.taotao.service.UserService;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -20,8 +24,14 @@ public class UserServiceImpl implements UserService{
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    private RedisTemplate<String,String> redisTemplate;
+
+
+    @Cacheable(value = "userCache",key = "user.findAll")
     @Override
     public List<User> findAll() {
+        System.out.println("从Mysql中查询");
         return userdao.findAll();
     }
 
@@ -31,8 +41,20 @@ public class UserServiceImpl implements UserService{
     }
 
 
+    @CacheEvict(value = "userCache",key = "user.findAll")
     @Override
     public List<User> queryUserByName(String name){
+
+        //****************************redis的深入使用************************************
+        //保存数据
+        this.redisTemplate.boundValueOps("redis").set("hello redis");
+        //有效期为100s
+        this.redisTemplate.boundValueOps("redis").expire(100l, TimeUnit.SECONDS);
+        // 给value每次执行加一操作
+        this.redisTemplate.boundValueOps("count").increment(1l);
+        //****************************redis的深入使用************************************
+
+        System.out.println("缓存清理了！");
         List<User> list = userMapper.queryUserByName(name);
         return list;
     }
