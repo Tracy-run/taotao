@@ -26,7 +26,7 @@
         <property name="IDENTITY" value="MYSQL" />
 
         <!--通用Mapper接口，多个通用接口用逗号隔开 -->
-        <property name="mappers" value="com.github.abel533.mapper.Mapper" />
+       <!-- <property name="mappers" value="com.github.abel533.mapper.Mapper" />-->
 
     </plugin>
 

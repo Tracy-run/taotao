@@ -9,4 +9,8 @@ public interface UserService {
     List<User>  findAll();
 
     List<User> queryUserByName(String name);
+
+//    List<User> queryUserByPage(Integer page,Integer size);
+
+    List<User> findItemByPage(Integer page,Integer size);
 }
