@@ -108,6 +108,21 @@ public class PageUtil {
         return result;
     }
 
+    /**
+     *
+     * @param list
+     * @param code 返回成功:1  失败：0
+     * @param msg
+     * @return
+     */
+    public static String getResultJsonArray(Object list,int code ,String msg){
+        Map<String,Object> jsonMap = new HashMap<>();
+        jsonMap.put("body",list);
+        jsonMap.put("code",code);
+        jsonMap.put("msg",msg);
+         return JSON.toJSONString(jsonMap);
+    }
+
     public static String getResultJsonArray(Object list){
         String jsonArray = JSON.toJSONString(list,SerializerFeature.WriteMapNullValue,SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullBooleanAsFalse);// 格式化result 
         return jsonArray;
@@ -149,5 +164,7 @@ public class PageUtil {
         }
         return list;
     }
+
+
 
 }
