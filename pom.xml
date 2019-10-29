@@ -85,6 +85,14 @@
             <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.1.2.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+
         <!--  此处必须配置jdk15才行  原因未知 -->
         <dependency>
             <groupId>net.sf.json-lib</groupId>
@@ -113,6 +121,20 @@
             <version>2.4</version>
         </dependency>
 
+        <!-- reids -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- rabbitMQ -->
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.4.3</version>
+        </dependency>
     </dependencies>
 
     <build>
