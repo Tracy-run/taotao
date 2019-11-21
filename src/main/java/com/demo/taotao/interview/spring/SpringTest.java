@@ -1,4 +1,4 @@
-package com.demo.taotao.spring;
+package com.demo.taotao.interview.spring;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;

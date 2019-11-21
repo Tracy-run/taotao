@@ -30,6 +30,9 @@ import org.apache.poi.hssf.util.HSSFColor;
 import sun.misc.BASE64Decoder;
 
 
+/**
+ * 导出非图片的excel
+ */
 public class ExcelExportUtils {
         /**
          * @param headers 表头
