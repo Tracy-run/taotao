@@ -444,5 +444,5 @@ SpringApplication的run方法的实现是我们本次旅程的主要线路，该
 
 ##流程见resources springbootProcess.png
 
-
+    [springbootProcess.png]
 
