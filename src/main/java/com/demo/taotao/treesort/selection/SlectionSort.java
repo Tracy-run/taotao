@@ -1,4 +1,4 @@
-package com.demo.taotao.sort.selection;
+package com.demo.taotao.treesort.selection;
 
 public class SlectionSort {
 
