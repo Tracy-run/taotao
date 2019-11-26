@@ -1,8 +1,7 @@
 ## 阿里一面
 
 ##   1.创建对象的方式
-    
-###     
+        
     一般共2种
     1.new 类名
     2.反射
@@ -12,7 +11,6 @@
 
 ##   2.session和cookie的区别
 
-###
     1.Cookie 以文本文件格式存储在浏览器中，session存储在服务端它存储了限制数据量
     2.session 的安全性更高
     3.设置cookie时间可以使cookie过期。但是使用session-destory()，我们将会销毁会话。
