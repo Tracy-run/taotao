@@ -1,11 +1,7 @@
 package com.demo.taotao.common.export;
 
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,6 +11,7 @@ import java.util.Map;
 
 import javax.imageio.ImageIO;
 
+import com.sun.rowset.internal.Row;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
@@ -27,6 +24,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 
+import org.apache.poi.ss.usermodel.Workbook;
 import sun.misc.BASE64Decoder;
 
 
@@ -606,5 +604,56 @@ public class ExcelExportUtils {
             rows.add(map2);
         }
 
+    /**
+     * 读取excel中的获取数据  需要使用poi 4.0.1 以上版本
+     * @param file
+     * @return
+     * @throws Exception
+     */
+  /*  private static List<Map<String,String>> readExcel(File file,String []keyList){
+        List<Map<String,String>> wordList = new ArrayList<>();
+        try {
+            // 创建输入流，读取Excel
+            FileInputStream is = new FileInputStream(file.getAbsolutePath());
+            Workbook workbook = new HSSFWorkbook(is);
 
+            for(int n = 0;n < workbook.getNumberOfSheets();n++){
+                Sheet sheet = workbook.getSheetAt(n);
+                //获取每个表
+                if(sheet == null){
+                    continue;
+                }
+                System.out.println("sheet num "+sheet.getLastRowNum());
+                for(int r =0;r<sheet.getLastRowNum();r++){
+                    //行信息
+                    Row row = sheet.getRow(r);
+                    //从第一行开始获取到最后一行
+                    if(row != null){
+                        short cellNum = row.getLastCellNum();
+                        Map<String,String> map = new HashMap<>();
+                        for(int a = 0;a<cellNum;a++){
+                            Cell numCell = row.getCell(a);
+                            if(numCell != null){
+                                numCell.setCellType(Cell.CELL_TYPE_STRING);
+                            }
+                            map.put(keyList[a], numCell.getStringCellValue());
+                        }
+                        wordList.add(map);
+
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        finally{
+            return wordList;
+        }
+
+    }*/
 }
