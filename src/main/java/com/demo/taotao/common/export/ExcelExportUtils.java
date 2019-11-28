@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
 
 import com.sun.rowset.internal.Row;
 import org.apache.commons.collections4.MapUtils;
@@ -24,7 +25,11 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import sun.misc.BASE64Decoder;
 
 
@@ -656,4 +661,60 @@ public class ExcelExportUtils {
         }
 
     }*/
+
+
+    /*
+     * 导入Excel文件
+     * @param obj	导入文件数据对应的实体类
+     * @param request	HttpServletRequest请求request
+     * @return	解析后数据集合
+     */
+    public List<Object> importExcel(Object obj, HttpServletRequest request) {
+        try {
+            // 将请求转化为多部件的请求
+            MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+            // 解析多部件请求文件
+            MultipartFile mFile = multipartRequest.getFile("importFile");
+            // 获得上传文件的文件名
+            String fileName = mFile.getOriginalFilename();
+            // 获取文件扩展名
+            String eName = fileName.substring(fileName.lastIndexOf(".")+1);
+            InputStream inputStream = mFile.getInputStream();
+            Workbook workbook = getWorkbook(inputStream, eName);
+            // 获取工作薄第一张表
+            Sheet sheet = workbook.getSheetAt(0);
+            // 获取名称
+            String sheetName = sheet.getSheetName().trim();
+            // 获取第一行;
+
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return null;
+    }
+
+    /*
+     * 根据excel文件格式获知excel版本信息
+     */
+    public static Workbook getWorkbook(InputStream fs,String str){
+        Workbook book = null;
+        try{
+            if ("xls".equals(str)) {
+                // 2003
+                book = new HSSFWorkbook(fs);
+            } else {
+                // 2007
+                book = new XSSFWorkbook(fs);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return book;
+    }
+
 }
