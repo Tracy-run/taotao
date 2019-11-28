@@ -1,4 +1,4 @@
-package com.demo.taotao.excel2pic;
+package com.demo.taotao.common.excel2pic;
 
 public class KeeSeriesDetails {
 

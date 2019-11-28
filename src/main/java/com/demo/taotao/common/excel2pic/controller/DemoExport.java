@@ -1,9 +1,9 @@
-package com.demo.taotao.excel2pic.controller;
+package com.demo.taotao.common.excel2pic.controller;
 
-import com.demo.taotao.excel2pic.Excel2Pic;
-import com.demo.taotao.excel2pic.KeeSeries;
-import com.demo.taotao.excel2pic.KeeSeriesDetails;
-import com.demo.taotao.excel2pic.KeeSpecimen;
+import com.demo.taotao.common.excel2pic.Excel2Pic;
+import com.demo.taotao.common.excel2pic.KeeSeries;
+import com.demo.taotao.common.excel2pic.KeeSeriesDetails;
+import com.demo.taotao.common.excel2pic.KeeSpecimen;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

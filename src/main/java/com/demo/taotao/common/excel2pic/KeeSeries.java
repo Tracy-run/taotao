@@ -1,7 +1,8 @@
-package com.demo.taotao.excel2pic;
+package com.demo.taotao.common.excel2pic;
 
-public class KeeSpecimen {
+public class KeeSeries {
 
+    private String id;
     private String res1;
     private String baseImage;
     private String code;
@@ -10,7 +11,32 @@ public class KeeSpecimen {
     private String enName;
     private String lookNum;
     private String ordersNum;
+    private String enImage;
+    private String chImage;
 
+    public String getEnImage() {
+        return enImage;
+    }
+
+    public void setEnImage(String enImage) {
+        this.enImage = enImage;
+    }
+
+    public String getChImage() {
+        return chImage;
+    }
+
+    public void setChImage(String chImage) {
+        this.chImage = chImage;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getRes1() {
         return res1;
