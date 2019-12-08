@@ -1,6 +1,7 @@
 # redis
 
 https://blog.csdn.net/jackpk/article/details/30073097
+**字符串类型（string），散列类型（hash），列表类型（list），集合类型（set），有序集合类型（zset）**
 
 ## redis的持久化方式RDB和AOF的区别
 

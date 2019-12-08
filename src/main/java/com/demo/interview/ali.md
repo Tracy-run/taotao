@@ -141,15 +141,17 @@
         AMQP的完整实现（vhost、Exchange、Binding、Routing Key等）
         事务支持/发布确认
         消息持久化
+    6.3 RocketMQ
         
-    6.3 Message Queue
+        
+    6.4 Message Queue
         https://www.open-open.com/project/5041489547448577927.html
     
         Open Message Queue是Sun Java System Message Queue的一个开源版本。Open message queue是一个企业级，可升级，非常成熟的消息服务器。
         它为面向消息的系统集成提供一套完整的JMS（Java Message Service ）实现。由于Open MQ源自Sun的Java Message Queue，
         所以其具有Java System Message Queue拥有的所有特性，功能和性能 。
         
-    6.4 Kafka
+    6.5 Kafka
         https://www.open-open.com/project/5041490600333883253.html
         
         Kafka是一个高吞吐量分布式消息系统。linkedin开源的kafka。 Kafka就跟这个名字一样，设计非常独特。首先，kafka的开发者们认为不需要在内存里缓存什么数据，
@@ -164,11 +166,11 @@
         高吞吐量：即使是非常普通的硬件Kafka也可以支持每秒数百万的消息。
         Partition、Consumer Group
     
-    6.5 JMS
+    6.6 JMS
         Java消息服务(Java Message Service) 即JMS
         一个Java平台中关于面向消息中间的API，用于在两个应用程序之间或者分布式系统中发送消息，进行异步通信。
 
-    6.6 AMQP
+    6.7 AMQP
         AMQP(advanced message queuing protocol) 是一个提供统一消息服务的应用层标准协议，基于此协议的客户端与消息中间件可传递消息，
         并不受客户端/中间件不同产品，不同开发语言等条件的限制。
 
