@@ -16,7 +16,7 @@ import javax.jms.Queue;
 
 import java.util.Properties;
 
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class}) //sql驱动报错
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class}) //禁止springboot自动注入数据源配置
 @SpringBootApplication
 @EnableCaching //可redis缓存
 @ComponentScan({"com.demo.taotao.pojo.*"})

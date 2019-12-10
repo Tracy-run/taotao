@@ -30,11 +30,11 @@ public class UserController {
     }
 
 // pageHelper 分页NG
-//    @RequestMapping("list/{page}/{size}")
-//    public List<User> queryUserAll(@PathVariable Integer page,@PathVariable Integer size){
-//        List<User> list = this.userService.queryUserByPage(page,size);
-//        return list;
-//    }
+    @RequestMapping("list/{page}/{size}")
+    public List<User> queryUserAll(@PathVariable Integer page,@PathVariable Integer size){
+        List<User> list = this.userService.queryUserByPage(page,size);
+        return list;
+    }
 
     @RequestMapping("lists/{page}/{size}")
     public List<User> itemsPage(@PathVariable Integer page,@PathVariable Integer size){

@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService{
         return list;
     }
 
-  /*  @Override
+    @Override
     public List<User> queryUserByPage(Integer page, Integer size) {
 
         //set startPage and  pageSize
@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService{
         //使用mapper查询
         List<User> list = this.userMapper.queryAll(null);
         return list;
-    }*/
+    }
 
     @Override
     public List<User> findItemByPage(Integer page, Integer size) {
