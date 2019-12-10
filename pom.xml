@@ -201,6 +201,15 @@
             <version>2.3.0</version>
         </dependency>
 
+        <!-- 热部署 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+            <!-- 这个需要为 true 热部署才有效 -->
+            <!-- idea里需要更改配置： 1.File->settings->Build->compiler->勾选Build project automatically
+            2.shift+ctrl+alt+/ -> register 勾选compiler.automake.allow.when.app.running -->
+        </dependency>
     </dependencies>
 
     <build>
