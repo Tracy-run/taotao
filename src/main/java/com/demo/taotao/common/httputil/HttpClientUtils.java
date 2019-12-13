@@ -82,7 +82,7 @@ public class HttpClientUtils {
      *            请求路径
      * @return json
      */
-    public String get(String url) {
+    public static String get(String url) {
         // 实例化httpclient
         // CloseableHttpClient httpclient = HttpClients.createDefault();
         DefaultHttpClient httpclient = new DefaultHttpClient();
