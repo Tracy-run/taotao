@@ -1,6 +1,17 @@
 #springcloud 
 https://www.jianshu.com/p/3c298df0ac89
 
+https://www.cnblogs.com/dream-to-pku/p/9222731.html
+###我们从整体来看一下 Spring Cloud主要的组件,以及它的访间流程
+  >1、外部或者内部的非 Spring Cloud目都统一通过API网关(Zuul)来访可内部服务.
+  2、网关接收到请求后,从注册中心( Eureka)获取可用服务
+  3、由 Ribbon进行均负载后,分发到后端的具体实例
+  4、徹服务之间通过 Feign进行通信处理业务
+  5、Hystrix负责处理服务超时熔断（SpringCloud的限流、熔断和降级）
+  6、Turbine监控服务间的调用和焠断相关指标
+
+
+
 ## Spring Boot + Eureka 实现微服务负载均衡
 
 
