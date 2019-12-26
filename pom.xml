@@ -155,7 +155,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5</version>
+            <version>4.5.6</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -210,6 +210,13 @@
             <!-- idea里需要更改配置： 1.File->settings->Build->compiler->勾选Build project automatically
             2.shift+ctrl+alt+/ -> register 勾选compiler.automake.allow.when.app.running -->
         </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13-beta-3</version>
+        </dependency>
+
     </dependencies>
 
     <build>

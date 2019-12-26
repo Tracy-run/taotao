@@ -49,10 +49,9 @@ public class StreamFilter {
             sm.forEach(System.out::print);
         });
         //flatMap
-        Stream<Character> stream3 = strList.stream()
-                .flatMap(StreamApiTest
-                        ::filterCharacter);
-        stream3.forEach(System.out::print);
+//        Stream<Character> stream3 = strList.stream()
+//                .flatMap(StreamApiTest::filterCharacter);
+//        stream3.forEach(System.out::print);
 
         //mapToDouble，mapToInt，mapToLong返回的是相对应的流
         List<Double> doubles = Arrays.asList(1D,2D,3D,4D);
