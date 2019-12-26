@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @RequestMapping("/test")
-    @NoRepeatSubmit
+//    @NoRepeatSubmit   //自定义注解NG
     private String test() {
         return ("程序逻辑返回");
     }
