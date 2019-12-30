@@ -9,8 +9,13 @@ public class StreamFilter {
 
     public static void main(String [] args) throws Exception{
 
+        List<Employee> timelist = new ArrayList<>();
+        timelist.stream().filter(a -> a.getName().equals(11));
+
 
     }
+
+
 
     public void filter(){
 
